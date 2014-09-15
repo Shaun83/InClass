@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace eResaurant.Entities
+{
+    public class MenuCategory
+    {
+        [Key]
+        public int MenuCategoryID { get; set; }
+        public string DescriptionID { get; set; }
+    }
+}
