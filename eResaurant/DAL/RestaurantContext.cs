@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace eResaurant.DAL
 {
-    public class ResturantContext : DbContext
+    public class RestaurantContext : DbContext
     {
 
         #region Constructor
-        public ResturantContext() : base("name=EatIn") { }
+        public RestaurantContext() : base("name=EatIn") { }
         #endregion
 
 
