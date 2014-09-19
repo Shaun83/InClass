@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eResaurant.BLL
 {
-    class RestaurantAdminController
+    public class RestaurantAdminController
     {
         #region Manage Waiters
         #region Command
