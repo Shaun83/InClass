@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eResaurant.Entities
+namespace eRestaurant.Entities
 {
     public class Waiter
     {

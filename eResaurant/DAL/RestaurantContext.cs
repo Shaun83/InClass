@@ -1,4 +1,4 @@
-﻿using eResaurant.Entities;
+﻿using eRestaurant.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity; //Needed for DdContext
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eResaurant.DAL
+namespace eRestaurant.DAL
 {
     public class RestaurantContext : DbContext
     {

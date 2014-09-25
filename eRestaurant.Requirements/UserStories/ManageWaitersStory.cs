@@ -1,5 +1,5 @@
-﻿using eResaurant.Entities;
-using eResaurant.BLL;
+﻿using eRestaurant.Entities;
+using eRestaurant.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;

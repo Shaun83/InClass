@@ -1,5 +1,5 @@
-﻿using eResaurant.DAL;
-using eResaurant.Entities;
+﻿using eRestaurant.DAL;
+using eRestaurant.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eResaurant.BLL
+namespace eRestaurant.BLL
 {
     public class RestaurantAdminController
     {

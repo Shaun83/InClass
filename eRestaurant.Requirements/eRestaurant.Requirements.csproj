@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\eResaurant\eResaurant.csproj">
+    <ProjectReference Include="..\eResaurant\eRestaurant.csproj">
       <Project>{41f71a97-685f-40ed-ac17-04afc54267d4}</Project>
-      <Name>eResaurant</Name>
+      <Name>eRestaurant</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
