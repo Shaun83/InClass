@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite", "http://localhost:49863", "{3CB98405-638C-4705-899F-8D250BA835AE}"
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite(2)", "http://localhost:49863", "{3CB98405-638C-4705-899F-8D250BA835AE}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
@@ -26,9 +24,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite", "http://localhost
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eRestaurant", "eResaurant\eRestaurant.csproj", "{41F71A97-685F-40ED-AC17-04AFC54267D4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eRestaurant.Requirements", "eRestaurant.Requirements\eRestaurant.Requirements.csproj", "{10157134-BCF5-476D-B379-452AAA335C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eRestaurant", "eRestaurant\eRestaurant.csproj", "{41F71A97-685F-40ED-AC17-04AFC54267D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,14 +38,14 @@ Global
 		{3CB98405-638C-4705-899F-8D250BA835AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CB98405-638C-4705-899F-8D250BA835AE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CB98405-638C-4705-899F-8D250BA835AE}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10157134-BCF5-476D-B379-452AAA335C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10157134-BCF5-476D-B379-452AAA335C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10157134-BCF5-476D-B379-452AAA335C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10157134-BCF5-476D-B379-452AAA335C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F71A97-685F-40ED-AC17-04AFC54267D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

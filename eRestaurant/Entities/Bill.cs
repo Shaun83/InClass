@@ -13,10 +13,10 @@ namespace eRestaurant.Entities
             BillDate = DateTime.Now; //Default the date to right now
         }
 
-        public int BillID{ get; set; }
+        public int BillID { get; set; }
         public DateTime BillDate { get; set; }
-        public DateTime OrderPlaced { get; set; }
-        public int NumberinParty { get; set; }
+        public DateTime? OrderPlaced { get; set; }
+        public int NumberInParty { get; set; }
         public bool PaidStatus { get; set; }
         public int WaiterID { get; set; }
         public int? TableID { get; set; }

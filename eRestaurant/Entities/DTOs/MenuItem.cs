@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eRestaurant.Entities.DTOs
 {
-    class MenuItem
+    public class MenuItem
     {
         public string Description { get; set; }
         public decimal Price { get; set; }

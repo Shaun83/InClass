@@ -1,14 +1,13 @@
-﻿using System;
+﻿using eRestaurant.DAL;
+using eRestaurant.Entities;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using System.ComponentModel;
-using eRestaurant.Entities;
-using eRestaurant.DAL;
-using eRestaurant.Entities.DTOs;
-
+using eRestaurant.Entities.DTOs; // needed for the Lambda version of .Include() method
 
 namespace eRestaurant.BLL
 {
@@ -22,6 +21,7 @@ namespace eRestaurant.BLL
             {
                 //Get the Item data and include the Category Data for each item
                 return context.Items.Include(x => x.Category).ToList();
+                // The .Include() method on the DbSet<T> class performs "eager loading" of data.
             }
         }
 
@@ -46,6 +46,8 @@ namespace eRestaurant.BLL
                                                Comment = item.Comment
                                            }
                            };
+                // Extract the data into a List<Category> and return it
+                return data.ToList();
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MenuItems.aspx.cs" Inherits="MenuItems" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="row col-md-12">
         <h1>Menu Items </h1>
 
@@ -8,24 +8,23 @@
             <ItemTemplate>
                 <div>
                     <h3>
-                        <img src='<%# "Images/" + Eval("Descriptin") + "-1.png" %>'
-                        <%#Eval("Description") %>
+                        <img src='<%# "Images/" + Eval("Description") + "-1.png" %>' />
+                        <%# Eval("Description") %>
                     </h3>
                     <div class="well">
                         <asp:Repeater ID="InnerRepeater" runat="server"
-                            DataSource='<%#Eval("MenuItems" %>'>
+                            DataSource='<%# Eval("MenuItems") %>'>
                             <ItemTemplate>
                                 <div>
                                     <h4>
-                                        <%#Eval("Description") %>
-                                        <%#Eval("Calories") %>
+                                        <%# Eval("Description") %>
+                                        <%# Eval("Calories") %>
                                         <%# ((decimal)Eval("Price")).ToString("C") %>
-                                        <%#Eval("Comment") %>
                                     </h4>
+                                    <%# Eval("Comment") %>
                                 </div>
-                        </ItemTemplate>
-
-                    </asp:Repeater>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
             </ItemTemplate>
