@@ -11,6 +11,6 @@ namespace eRestaurant.Entities
     {
         [Key]
         public int MenuCategoryID { get; set; }
-        public string DescriptionID { get; set; }
+        public string Description { get; set; }
     }
 }

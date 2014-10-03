@@ -24,6 +24,6 @@ namespace eRestaurant.Entities
         public string Comment { get; set; }
         public int MenuCategoryID { get; set; }
 
-        public virtual MenuCategory Catgeory { get; set; }
+        public virtual MenuCategory Category { get; set; }
     }
 }

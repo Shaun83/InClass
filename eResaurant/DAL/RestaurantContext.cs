@@ -25,6 +25,7 @@ namespace eRestaurant.DAL
         public DbSet<MenuCategory> MenuCategories { get; set; }
         public DbSet<Waiter> Waiters { get; set; }
         public DbSet<BillItem> BillItems { get; set; }
+        public DbSet<Item> Items { get; set; }
         #endregion 
 
         #region Over-ride OnModelCreating
