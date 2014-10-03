@@ -12,5 +12,7 @@ namespace eRestaurant.Entities
         [Key]
         public int MenuCategoryID { get; set; }
         public string Description { get; set; }
+
+        public virtual ICollection<Item> MenuItems { get; set; }
     }
 }
