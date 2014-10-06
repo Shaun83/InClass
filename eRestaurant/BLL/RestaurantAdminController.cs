@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace eRestaurant.BLL
 {
+    [DataObject]
     public class RestaurantAdminController
     {
         #region Manage Waiters
@@ -236,6 +237,22 @@ namespace eRestaurant.BLL
                 return context.SpecialEvents.Find(EventCode);
             }
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<Reservation> ListReservationBySpecialEvent(string EventCode)
+        {
+            using (RestaurantContext context = new RestaurantContext())
+            {
+                var results = from data in context.Reservations
+                              where data.EventCode == EventCode
+                              select data;
+
+                return results.ToList();
+            }
+            
+        }
+
+
         #endregion
         #endregion
 
