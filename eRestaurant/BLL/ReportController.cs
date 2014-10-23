@@ -30,5 +30,25 @@ namespace eRestaurant.BLL
                  return results.ToList();
             }
         }
+
+        
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<CategorizedItemSale> TotalCategorizedItemSales()
+        {
+            using (RestaurantContext context = new RestaurantContext())
+            {
+             var result = from info in  context.BillItems
+			 orderby info.Item.Category.Description, info.Item.Description
+			 select new  CategorizedItemSale()
+			 {
+			 	CategoryDescription = info.Item.Category.Description,
+				ItemDescription = info.Item.Description, 
+				Quantity = info.Quantity,
+                Price = info.SalePrice * info.Quantity,
+                Cost = info.UnitCost * info.Quantity
+			 };
+             return result.ToList();
+            }
+        }
     }
 }
