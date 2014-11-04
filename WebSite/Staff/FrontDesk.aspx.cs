@@ -14,10 +14,17 @@ public partial class Staff_FrontDesk : System.Web.UI.Page
     }
     protected void MockLastBillingDateTime_Click(object sender, EventArgs e)
     {
-        MessageUserControl.TryRun(SetMockedTimeToLastBill);
+        var controller = new AdHocController();
+        DateTime info = controller.GetLastBillDateTime();
+        //Format the Datetime object to work with the HTML5 <input type="date"/>
+        SearchDate.Text = info.ToString("yyyy-MM-dd");// This is the format for a date 
+        //format the DateTime object to work with the HTML 5 <input type="time"/>
+        SearchTime.Text = info.ToString("HH:mm:ss"); //HH is 24 hour clock, hh is 12 hour clock
+
+
     }
 
-    private void SetMockedTimeToLastBill()
+   /* private void SetMockedTimeToLastBill()
     {
         var controller = new AdHocController();
         var info = controller.GetLastBillDateTime();
@@ -27,4 +34,6 @@ public partial class Staff_FrontDesk : System.Web.UI.Page
         // formatting time for use in an <input type="time"> HTML5 control
         SearchTime.Text = info.ToString("HH:mm:ss"); // HH is 24 hour clock, hh is 12 hour clock
     }
+    */
+
 }

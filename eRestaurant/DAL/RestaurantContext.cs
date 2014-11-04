@@ -33,7 +33,7 @@ namespace eRestaurant.DAL
         {
           modelBuilder
               .Entity<Reservation>().HasMany(r => r.Tables)
-              .WithMany (t => t.Reservation)
+              .WithMany (t => t.Reservations)
               .Map(mapping =>
             {
             mapping.ToTable("ReservationTables");
