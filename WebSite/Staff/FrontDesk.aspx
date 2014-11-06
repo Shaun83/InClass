@@ -11,6 +11,9 @@
                 display: inline-block;
                 vertical-align: top;
             }
+            .inline-div{
+                display: inline;
+            }
         </style>
 
         <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
@@ -83,11 +86,17 @@
                 <summary>Tables</summary>
                 <asp:GridView ID="SeatingGridView" runat="server"
                     CssClass="table table-hover table striped table-condensed"
+                    OnSelectedIndexChanging="SeatingGridView_SelectedIndexChanging"
                     ItemType="eRestaurant.Entities.DTOs.SeatingSummary" AutoGenerateColumns="false" DataSourceID="SeatingObjectDataSource">
                     <Columns>
                         <asp:CheckBoxField DataField="Taken" HeaderText="Taken" SortExpression="Taken"
                             ItemStyle-HorizontalAlign="Center"></asp:CheckBoxField>
-                        <asp:BoundField DataField="Table" HeaderText="Table" SortExpression="Table"></asp:BoundField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Label ID="TableNumber" runat="server" Text='<%# Item.Table %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <%--<asp:BoundField DataField="Table" HeaderText="Table" SortExpression="Table"></asp:BoundField>--%>
                         <asp:BoundField DataField="Seating" HeaderText="Seating" SortExpression="Seating"></asp:BoundField>
                         <asp:TemplateField>
                             <ItemTemplate>
@@ -118,9 +127,18 @@
                                     <%--Table occupied info here--%>
                                     <%# Item.Waiter %>
                                     <asp:Label ID="ReservationNameLabel" runat="server"
-                                        Text='<%# "&mdash;" + Item.ReservationName %>' '
+                                        Text='<%# "&mdash;" + Item.ReservationName %>'
                                         Visible='<%# !string.IsNullOrEmpty(Item.ReservationName) %>' />
+                                
+                                <asp:Panel ID="BillInfo" runat="server" CssClass="inline-div"
+                                    Visible="<%# Item.BillTotal.HasValue && Item.BillTotal.Value > 0 %>">
+                                    <asp:Label ID="Label1" runat="server" 
+                                        Text='<%# string.Format(" &mdash; {0:C}", Item.BillTotal) %>' />
                                 </asp:Panel>
+
+                                </asp:Panel>
+
+
                             </ItemTemplate>
                         </asp:TemplateField>
                         <%--<asp:BoundField DataField="BillID" HeaderText="BillID" SortExpression="BillID"></asp:BoundField>--%>
