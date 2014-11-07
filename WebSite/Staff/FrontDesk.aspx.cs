@@ -16,13 +16,12 @@ public partial class Staff_FrontDesk : System.Web.UI.Page
     {
         var controller = new AdHocController();
         DateTime info = controller.GetLastBillDateTime();
-        //Format the Datetime object to work with the HTML5 <input type="date"/>
-        SearchDate.Text = info.ToString("yyyy-MM-dd");// This is the format for a date 
-        //format the DateTime object to work with the HTML 5 <input type="time"/>
-        SearchTime.Text = info.ToString("HH:mm:ss"); //HH is 24 hour clock, hh is 12 hour clock
-
-
+        // Format the DateTime object to work with the HTML5 <input type="date" />
+        SearchDate.Text = info.ToString("yyyy-MM-dd"); // This is the format for a date
+        // Format the DateTime object to work with the HTML5 <input type="time" />
+        SearchTime.Text = info.ToString("HH:mm:ss"); // HH is 24 hour clock, hh is 12 hour clock
     }
+
     protected void SeatingGridView_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
     {
         // Seat walk-in customers
@@ -43,16 +42,35 @@ public partial class Staff_FrontDesk : System.Web.UI.Page
             SeatingGridView.DataBind();
         }, "Customer Seated", "New walk-in customer has been seated");
     }
-   /* private void SetMockedTimeToLastBill()
+
+    protected void ReservationSummaryListView_OnItemCommand(object sender, ListViewCommandEventArgs e)
     {
-        var controller = new AdHocController();
-        var info = controller.GetLastBillDateTime();
-        // formatting date for use in an <input type="date"> HTML5 control
-        SearchDate.Text = info.ToString("yyyy-MM-dd");
-
-        // formatting time for use in an <input type="time"> HTML5 control
-        SearchTime.Text = info.ToString("HH:mm:ss"); // HH is 24 hour clock, hh is 12 hour clock
+        // Check the command name and add the reservation for the specified seats.
+        if (e.CommandName.Equals("Seat"))
+        {
+            MessageUserControl.TryRun(() =>
+            {
+                // Get the data
+                var reservationId = int.Parse(e.CommandArgument.ToString());
+                var selectedItems = new List<byte>();
+                foreach (ListItem item in ReservationTableListBox.Items)
+                {
+                    if (item.Selected)
+                        selectedItems.Add(byte.Parse(item.Text.Replace("Table ", "")));
+                }
+                var when = DateTime.Parse(SearchDate.Text).Add(TimeSpan.Parse(SearchTime.Text));
+                // Seat the reservation customer
+                var controller = new SeatingController();
+                controller.SeatCustomer(when, reservationId, selectedItems, int.Parse(WaiterDropDownList.SelectedValue));
+                // Refresh the gridview
+                SeatingGridView.DataBind();
+            }, "Customer Seated", "Reservation customer has arrived and has been seated");
+        }
     }
-    */
 
+    protected bool ShowReservationSeating()
+    {
+        // TODO: Get the reservations for the day and return true if there are reservations, false otherwise
+        return false;
+    }
 }
