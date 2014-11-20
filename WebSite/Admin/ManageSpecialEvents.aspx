@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="row col-md-12">
         <h1>Special Events <span class="glyphicon glyphicon-glass"></span></h1>
-    </div>
+    
     <asp:ListView ID="ListView1" runat="server" DataSourceID="SpecialEventDataSource" InsertItemPosition="LastItem" DataKeyNames="EventCode">
         <EditItemTemplate>
             <div style="">
@@ -68,6 +68,7 @@
         </LayoutTemplate>
         
     </asp:ListView>
+    </div>
     <my:MessageUserControl runat="server" ID="MessageUserControl" />
     <asp:ObjectDataSource runat="server" ID="SpecialEventDataSource" DataObjectTypeName="eRestaurant.Entities.SpecialEvent" DeleteMethod="DeleteSpecialEvent" InsertMethod="AddSpecialEvent" SelectMethod="ListAllSpecialEvents" TypeName="eRestaurant.BLL.RestaurantAdminController" UpdateMethod="UpdateSpecialEvent" OnDeleted="ProcessExceptions" OnInserted="ProcessExceptions" OnUpdated="ProcessExceptions"></asp:ObjectDataSource>
 </asp:Content>
